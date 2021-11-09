@@ -7,12 +7,10 @@ enum Char {
 let IndentChar = Char.X2Spaces;
 
 chrome.storage.sync.get("indentChar", (items) => {
-    console.log(items)
     IndentChar = items.indentChar
 })
 
 chrome.storage.onChanged.addListener(changes => {
-    console.log(changes)
     IndentChar = changes.indentChar.newValue
 })
 
