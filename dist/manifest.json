@@ -1,12 +1,21 @@
 {
   "manifest_version": 3,
-  "name": "github-editor-tab",
+  "name": "GithubEditorIndentExtension",
   "version": "0.1.0",
   "content_scripts": [
     {
       "matches": ["https://github.com/*"],
-      "js": ["index.js"],
+      "js": [
+        "inject.js"
+      ],
       "run_at": "document_idle"
     }
+  ],
+  "action": {
+    "default_title": "GithubEditorIndentExtension",
+    "default_popup": "setting.html"
+  },
+  "permissions": [
+    "storage"
   ]
 }
