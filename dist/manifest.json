@@ -13,7 +13,12 @@
   ],
   "action": {
     "default_title": "GithubEditorIndentExtension",
-    "default_popup": "setting.html"
+    "default_popup": "setting.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "24": "icon24.png",
+      "32": "icon32.png"
+    }
   },
   "permissions": [
     "storage"
