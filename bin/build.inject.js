@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 const esbuild = require("esbuild")
-
 const WATCH_ENABLED = process.env.WATCH != undefined && process.env.WATCH === "true"
 
 esbuild.build({
