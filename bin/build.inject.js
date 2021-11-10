@@ -5,7 +5,7 @@ const WATCH_ENABLED = process.env.WATCH != undefined && process.env.WATCH === "t
 
 esbuild.build({
     entryPoints: ["src/script/inject.ts"],
-    bundle: false,
+    bundle: true,
     minify: true,
     outfile: "dist/inject.js",
     watch: WATCH_ENABLED
