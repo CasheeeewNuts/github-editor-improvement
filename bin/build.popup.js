@@ -9,7 +9,7 @@ esbuild.build({
     ],
     bundle: true,
     outfile: 'dist/ui/popup/index.js',
-    minify: false,
+    minify: true,
     sourcemap: false,
     watch: WATCH_ENABLED
 }).catch(console.error)

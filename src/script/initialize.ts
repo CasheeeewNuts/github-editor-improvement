@@ -1,4 +1,4 @@
-import {Char} from "../ui/popup/setting/SettingPanel";
+import {Char} from "../lib/char";
 
 chrome.storage.sync.get(["indentChar"]).then((items) => {
     if (!items.indentChar) {

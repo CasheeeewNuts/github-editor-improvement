@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
-import SettingPanel, {Char} from "./setting/SettingPanel";
+import SettingPanel from "./setting/SettingPanel";
 import useChromeStorage from "./setting/hooks/useChromeStorage";
 import {Alert, Snackbar, Stack} from "@mui/material";
+import {Char} from "../../lib/char";
 
 enum SyncStatus {
     NotChanged,

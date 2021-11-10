@@ -1,11 +1,8 @@
 import React from "react";
 import {FormControl, FormControlLabel, Radio, RadioGroup} from "@mui/material";
+import {Char} from "../../../lib/char";
 
-export enum Char {
-    X2Spaces,
-    X4Spaces,
-    TabChar
-}
+
 
 type Props = {
     initialChar: Char,

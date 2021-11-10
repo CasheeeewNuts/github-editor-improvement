@@ -1,8 +1,4 @@
-enum Char {
-    X2Spaces,
-    X4Spaces,
-    TabChar
-}
+import {Char} from "../lib/char";
 
 let IndentChar: Char;
 
