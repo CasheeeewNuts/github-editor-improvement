@@ -1,4 +1,4 @@
-import React from "react";
+import {h, FunctionalComponent} from "preact";
 import {FormControl, FormControlLabel, Radio, RadioGroup} from "@mui/material";
 import {Char} from "../../../lib/char";
 
@@ -9,7 +9,7 @@ type Props = {
     handlerFactory: (char: Char) => () => void
 }
 
-const SettingPanel: React.VFC<Props> = ({initialChar, handlerFactory}) => {
+const SettingPanel: FunctionalComponent<Props> = ({initialChar, handlerFactory}) => {
 
     return (
         <FormControl component="fieldset">

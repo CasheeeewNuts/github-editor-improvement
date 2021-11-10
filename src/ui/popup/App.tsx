@@ -1,7 +1,8 @@
-import React, {useEffect, useState} from "react";
-import SettingPanel from "./setting/SettingPanel";
-import useChromeStorage from "./setting/hooks/useChromeStorage";
+import {h} from "preact";
+import {useEffect, useState} from "preact/compat";
 import {Alert, Snackbar, Stack} from "@mui/material";
+import useChromeStorage from "./setting/hooks/useChromeStorage";
+import SettingPanel from "./setting/SettingPanel";
 import {Char} from "../../lib/char";
 
 enum SyncStatus {
