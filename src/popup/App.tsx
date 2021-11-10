@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
-import SettingPanel, {Char} from "./SettingPanel";
-import useChromeStorage from "./hooks/useChromeStorage";
+import SettingPanel, {Char} from "./setting/SettingPanel";
+import useChromeStorage from "./setting/hooks/useChromeStorage";
 import {Alert, Snackbar, Stack} from "@mui/material";
 
 enum SyncStatus {
@@ -16,7 +16,7 @@ const App = () => {
 
     useEffect(() => {
         (async () => {
-            const res = await storage.query("indentChar")
+            const res = await storage.query(["indentChar"])
             setIndentChar(res.indentChar)
         })()
     }, [])

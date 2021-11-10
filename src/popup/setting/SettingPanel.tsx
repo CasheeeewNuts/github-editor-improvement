@@ -11,6 +11,7 @@ type Props = {
     initialChar: Char,
     handlerFactory: (char: Char) => () => void
 }
+
 const SettingPanel: React.VFC<Props> = ({initialChar, handlerFactory}) => {
 
     return (
