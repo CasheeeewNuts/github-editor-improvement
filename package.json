@@ -8,7 +8,9 @@
   "scripts": {
     "build:popup": "WATCH=true ./bin/build.popup.js",
     "build:injnect": "WATCH=true ./bin/build.popup.js",
-    "build": "./bin/build.inject.js && ./bin/build.popup.js"
+    "prebuild": "yarn typecheck",
+    "build": "./bin/build.inject.js && ./bin/build.popup.js",
+    "typecheck": "yarn tsc --noEmit"
   },
   "dependencies": {
     "@emotion/react": "^11.5.0",

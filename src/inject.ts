@@ -4,46 +4,44 @@ enum Char {
     TabChar
 }
 
-let IndentChar = Char.X2Spaces;
-
-chrome.storage.sync.get("indentChar", (items) => {
-    IndentChar = items.indentChar
-})
+let IndentChar: Char;
 
 chrome.storage.onChanged.addListener(changes => {
     IndentChar = changes.indentChar.newValue
 })
 
-document.addEventListener("keydown", event => {
-    const isTab = event.key === "Tab"
 
-    if (!isTab) {
-        return
-    }
+chrome.storage.sync.get("indentChar", (items) => {
+    IndentChar = items.indentChar
 
-    const activeElementIsTextArea = document.activeElement instanceof HTMLTextAreaElement
+    document.addEventListener("keydown", event => {
+        const isTab = event.key === "Tab"
 
-    if (!activeElementIsTextArea) {
-        return
-    }
+        if (!isTab) {
+            return
+        }
 
-    const textArea = document.activeElement as HTMLTextAreaElement
+        const activeElementIsTextArea = document.activeElement instanceof HTMLTextAreaElement
 
-    event.preventDefault()
+        if (!activeElementIsTextArea) {
+            return
+        }
 
-    const selectionHasRange = textArea.selectionStart !== textArea.selectionEnd
+        const textArea = document.activeElement as HTMLTextAreaElement
 
-    if (selectionHasRange) {
-        return
-    } else {
-        insertIndent(textArea, IndentChar)
-    }
+        event.preventDefault()
 
-    textArea.dispatchEvent(new Event("change"))
+        const selectionHasRange = textArea.selectionStart !== textArea.selectionEnd
+
+        if (selectionHasRange) {
+            return
+        } else {
+            insertIndent(textArea, IndentChar)
+        }
+
+        textArea.dispatchEvent(new Event("change"))
+    })
 })
-
-
-
 
 function insertIndent(textArea: HTMLTextAreaElement, indentCharType: Char): void {
     const cursorPosition = textArea.selectionStart
