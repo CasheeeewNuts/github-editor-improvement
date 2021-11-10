@@ -1,5 +1,1 @@
-*
-!.gitignore
-!manifest.json
-!icon*.png
-!popup.html
+*.js

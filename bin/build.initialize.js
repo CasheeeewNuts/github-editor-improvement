@@ -4,12 +4,8 @@ const esbuild = require("esbuild")
 const WATCH_ENABLED = process.env.WATCH != undefined && process.env.WATCH === "true"
 
 esbuild.build({
-    entryPoints: [
-        'src/ui/popup/index.tsx',
-    ],
+    entryPoints: ["src/script/initialize.ts"],
     bundle: true,
-    outfile: 'dist/ui/popup/index.js',
-    minify: false,
-    sourcemap: false,
+    outfile: "dist/initialize.js",
     watch: WATCH_ENABLED
 }).catch(console.error)
