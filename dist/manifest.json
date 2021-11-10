@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Github Editor - IndentExtension",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "content_scripts": [
     {
       "matches": ["https://github.com/*"],
